@@ -184,6 +184,8 @@
         <attr name="tl_indicator_anim_enable"/>
         <attr name="tl_indicator_anim_duration"/>
         <attr name="tl_indicator_bounce_enable"/>
+        <attr name="tl_indicator_border_size" format="dimension"/>
+        <attr name="tl_indicator_border_color" format="color"/>
 
         <!-- divider -->
         <attr name="tl_divider_color"/>

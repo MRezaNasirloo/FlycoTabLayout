@@ -79,6 +79,9 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
     private int mBarStrokeColor;
     private float mBarStrokeWidth;
 
+    private int mIndicatorStrokeColor;
+    private float mIndicatorStrokeWidth;
+
     private int mHeight;
 
     /** anim */
@@ -156,6 +159,9 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
         mBarColor = ta.getColor(R.styleable.SegmentTabLayout_tl_bar_color, Color.TRANSPARENT);
         mBarStrokeColor = ta.getColor(R.styleable.SegmentTabLayout_tl_bar_stroke_color, mIndicatorColor);
         mBarStrokeWidth = ta.getDimension(R.styleable.SegmentTabLayout_tl_bar_stroke_width, dp2px(1));
+
+        mIndicatorStrokeColor = ta.getColor(R.styleable.SegmentTabLayout_tl_indicator_border_color, Color.TRANSPARENT);
+        mIndicatorStrokeWidth = ta.getDimension(R.styleable.SegmentTabLayout_tl_indicator_border_size, dp2px(1));
 
         ta.recycle();
     }
@@ -391,6 +397,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
             calcIndicatorRect();
         }
 
+        mIndicatorDrawable.setStroke(((int) mIndicatorStrokeWidth), mIndicatorStrokeColor);
         mIndicatorDrawable.setColor(mIndicatorColor);
         mIndicatorDrawable.setBounds(paddingLeft + (int) mIndicatorMarginLeft + mIndicatorRect.left,
                 (int) mIndicatorMarginTop, (int) (paddingLeft + mIndicatorRect.right - mIndicatorMarginRight),
